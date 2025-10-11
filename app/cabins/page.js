@@ -1,10 +1,10 @@
-"use client";
 import CabinCard from "@/app/_components/CabinCard";
-
 import { getCabins } from "../_lib/data-service";
+
 export default async function Page() {
   // CHANGE
-  const cabins = getCabins();
+  console.log("Starting...");
+  const cabins = await getCabins();
   console.log(cabins);
 
   return (
