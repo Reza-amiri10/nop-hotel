@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={kavivanar.className}>
       <body className="bg-primary-950 text-gray-50 min-h-screen flex flex-col relerive">
         <Header />
+
         <div className="flex-1 px-8 py-12 grid ">
           <main className="max-w-7xl mx-auto w-full">{children}</main>
         </div>
