@@ -26,8 +26,10 @@ export default async function Page({ params }) {
           <Image
             src={image}
             fill
+            quality={85}
             className="object-cover"
             alt={`Cabin ${name}`}
+            sizes="(max-width: 768px) 100vw (max-width: 1200px) 50vw, 33vw"
           />
         </div>
 

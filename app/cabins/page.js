@@ -1,9 +1,10 @@
 import CabinList from "@/app/_components/CabinsList";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
+import Filter from "../_components/Filter";
 export const revalidate = 0;
-export default function Page() {
-  // CHANGE
+export default async function Page({ searchParams }) {
+  const filters = (await searchParams).capacity ?? "all";
 
   return (
     <div>
@@ -18,8 +19,12 @@ export default function Page() {
         away from home. The perfect spot for a peaceful, calm vacation. Welcome
         to paradise.
       </p>
+      <div className="flex justify-end mb-8">
+        <Filter />
+      </div>
+
       <Suspense fallback={<Spinner>Loading Cabins...</Spinner>}>
-        <CabinList />
+        <CabinList filters={filters} />
       </Suspense>
     </div>
   );

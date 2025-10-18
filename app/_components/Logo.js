@@ -10,7 +10,7 @@ function Logo() {
           height="60"
           width="60"
           alt="The Wild Oasis logo"
-          quality={80}
+          quality={85}
         />
         <span className="text-xl font-semibold text-primary-100">
           Nop Hotel
