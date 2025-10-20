@@ -1,7 +1,6 @@
 "use client";
 
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
-
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 export default function Filter() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -11,8 +10,18 @@ export default function Filter() {
     const params = new URLSearchParams(searchParams);
     params.set("capacity", filter);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-    console.log(params);
   };
+
+  // const searchParams = useSearchParams();
+  // const pathname = usePathname();
+  // const router = useRouter();
+
+  // const handleFilter = (filter) => {
+  //   const params = new URLSearchParams(searchParams);
+  //   params.set("capacity", filter);
+  //   router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  //   console.log(params);
+  // };
 
   return (
     <div className="border border-primary-800">

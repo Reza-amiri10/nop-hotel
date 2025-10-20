@@ -23,7 +23,7 @@ export default async function Page({ searchParams }) {
         <Filter />
       </div>
 
-      <Suspense fallback={<Spinner>Loading Cabins...</Spinner>}>
+      <Suspense fallback={<Spinner>Loading Cabins...</Spinner>} key={filters}>
         <CabinList filters={filters} />
       </Suspense>
     </div>
